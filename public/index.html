@@ -9,9 +9,9 @@
 </head>
 
 <body class="text-gray-600">
-  <header class="flex">
-    <div class="flex items-center border border-gray-700 w-1/4">
-      <button class="pl-3 pr-6">
+  <header class="flex fixed z-10 w-full bg-white">
+    <div class="flex items-center w-1/4">
+      <button class="burger-btn pl-3 pr-6">
         <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd">
           <path d="M24 21h-24v-2h24v2zm0-4.024h-24v-2h24v2zm0-3.976h-24v-2h24v2zm0-4h-24v-2h24v2zm0-6v2h-24v-2h24z" />
         </svg>
@@ -20,7 +20,8 @@
         <img class="w-20" src="../src/assets/youTube_logo.svg" alt="">
       </a>
     </div>
-    <div class="flex items-center border border-gray-700 w-1/2">
+
+    <div class="flex items-center w-1/2">
       <div class="flex w-full h-full p-2.5">
         <input placeholder="Search"
           class="w-full border shadow-inner rounded-tl-sm border-gray-300 p-1 focus:border-blue-700 focus:outline-none"
@@ -43,7 +44,7 @@
       </button>
     </div>
 
-    <div class="flex items-center justify-end space-x-5 border border-gray-700 w-1/4 py-2 px-4">
+    <div class="flex items-center justify-end space-x-5 w-1/4 py-2 px-4">
       <button>
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
           <path
@@ -52,13 +53,14 @@
       </button>
 
       <button>
-        <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd">
+        <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" clip-rule="evenodd">
           <path
             d="M12 16c1.656 0 3 1.344 3 3s-1.344 3-3 3-3-1.344-3-3 1.344-3 3-3zm0 1c1.104 0 2 .896 2 2s-.896 2-2 2-2-.896-2-2 .896-2 2-2zm0-8c1.656 0 3 1.344 3 3s-1.344 3-3 3-3-1.344-3-3 1.344-3 3-3zm0 1c1.104 0 2 .896 2 2s-.896 2-2 2-2-.896-2-2 .896-2 2-2zm0-8c1.656 0 3 1.344 3 3s-1.344 3-3 3-3-1.344-3-3 1.344-3 3-3zm0 1c1.104 0 2 .896 2 2s-.896 2-2 2-2-.896-2-2 .896-2 2-2z" />
         </svg>
       </button>
 
-      <button class="flex items-center px-2 py-1 text-sm text-blue-700 uppercase border border-blue-700 rounded-sm">
+      <button
+        class="hidden flex items-center px-2 py-1 text-sm text-blue-700 uppercase border border-blue-700 rounded-sm">
         <svg class="mr-2" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
           <path
             d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm7.753 18.305c-.261-.586-.789-.991-1.871-1.241-2.293-.529-4.428-.993-3.393-2.945 3.145-5.942.833-9.119-2.489-9.119-3.388 0-5.644 3.299-2.489 9.119 1.066 1.964-1.148 2.427-3.393 2.945-1.084.25-1.608.658-1.867 1.246-1.405-1.723-2.251-3.919-2.251-6.31 0-5.514 4.486-10 10-10s10 4.486 10 10c0 2.389-.845 4.583-2.247 6.305z" />
@@ -67,6 +69,384 @@
       </button>
     </div>
   </header>
+
+  <aside class="aside-bar active w-64 max-h-screen overflow-auto fixed top-0 pt-12 transition duration-100">
+    <section class="py-2 border-b">
+      <ul>
+        <li class="transition duration-500 text-gray-800 bg-gray-200 hover:bg-gray-300">
+          <a href="#" class="flex items-center px-6 py-2">
+            <svg class="mr-6 fill-red-500" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+              viewBox="0 0 24 24">
+              <path
+                d="M12 6.453l9 8.375v9.172h-6v-6h-6v6h-6v-9.172l9-8.375zm12 5.695l-12-11.148-12 11.133 1.361 1.465 10.639-9.868 10.639 9.883 1.361-1.465z" />
+            </svg>
+            <span>Home</span>
+          </a>
+        </li>
+
+        <li class="transition duration-500 hover:bg-gray-200">
+          <a href="#" class="flex items-center px-6 py-2">
+            <svg class="mr-6 fill-gray-500" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+              viewBox="0 0 24 24">
+              <path
+                d="M7.467 0c1.102.018 5.555 2.549 6.386 8.558.905-.889 1.409-3.664 1.147-4.843 3.952 2.969 6 6.781 6 11.034 0 5.094-3.43 9.251-8.963 9.251-5.728 0-9.037-3.753-9.037-8.276 0-6.26 5.052-7.62 4.467-15.724zm3.262 19.743c-.749.848-.368 1.945.763 2.045 1.035.093 1.759-.812 2.032-1.792.273-.978.09-2.02-.369-2.893-.998 1.515-1.52 1.64-2.426 2.64zm4.42 1.608c2.49-1.146 3.852-3.683 3.852-6.58 0-2.358-.94-4.977-2.5-7.04-.743 2.867-2.924 3.978-4.501 4.269.05-3.219-.318-6.153-2.602-8.438-.296 4.732-4.321 7.63-4.398 12.114-.029 1.511.514 3.203 1.73 4.415.491.489 1.054.871 1.664 1.16-.121-.608-.062-1.254.195-1.848.911-2.106 3.333-2.321 4.202-5.754.952.749 3.275 3.503 2.778 6.358-.082.469-.224.923-.42 1.344z" />
+            </svg>
+            <span>Trending</span>
+          </a>
+        </li>
+
+        <li class="transition duration-500 hover:bg-gray-200">
+          <a href="#" class="flex items-center px-6 py-2">
+            <svg class="mr-6 fill-gray-500" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+              viewBox="0 0 24 24">
+              <path
+                d="M10.644 17.08c2.866-.662 4.539-1.241 3.246-3.682-3.932-7.427-1.042-11.398 3.111-11.398 4.235 0 7.054 4.124 3.11 11.398-1.332 2.455.437 3.034 3.242 3.682 2.483.574 2.647 1.787 2.647 3.889v1.031h-18c0-2.745-.22-4.258 2.644-4.92zm-12.644 4.92h7.809c-.035-8.177 3.436-5.313 3.436-11.127 0-2.511-1.639-3.873-3.748-3.873-3.115 0-5.282 2.979-2.333 8.549.969 1.83-1.031 2.265-3.181 2.761-1.862.43-1.983 1.34-1.983 2.917v.773z" />
+            </svg>
+            <span>Subscriptions</span>
+          </a>
+        </li>
+      </ul>
+    </section>
+
+    <section class="py-2 border-b">
+      <ul>
+        <li class="transition duration-500 hover:bg-gray-200">
+          <a href="#" class="flex items-center px-6 py-2">
+            <svg class="mr-6 fill-gray-500" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+              viewBox="0 0 24 24">
+              <path
+                d="M5.495 2h16.505v-2h-17c-1.657 0-3 1.343-3 3v18c0 1.657 1.343 3 3 3h17v-20h-16.505c-1.375 0-1.375-2 0-2zm.505 4h14v16h-14v-16z" />
+            </svg>
+            <span>Library</span>
+          </a>
+        </li>
+
+        <li class="transition duration-500 hover:bg-gray-200">
+          <a href="#" class="flex items-center px-6 py-2">
+            <svg class="mr-6 fill-gray-500" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+              viewBox="0 0 24 24">
+              <path
+                d="m3.503 6.726c1.765-2.836 4.911-4.726 8.495-4.726 5.518 0 9.997 4.48 9.997 9.997 0 5.519-4.479 9.999-9.997 9.999-5.245 0-9.553-4.048-9.966-9.188-.024-.302.189-.811.749-.811.391 0 .715.3.747.69.351 4.369 4.012 7.809 8.47 7.809 4.69 0 8.497-3.808 8.497-8.499 0-4.689-3.807-8.497-8.497-8.497-3.037 0-5.704 1.597-7.206 3.995l1.991.005c.414 0 .75.336.75.75s-.336.75-.75.75h-4.033c-.414 0-.75-.336-.75-.75v-4.049c0-.414.336-.75.75-.75s.75.335.75.75zm7.487.021.007 5.563c0 .288.165.55.424.675l3.978 1.928c.373.18.821.024 1.001-.349s.024-.821-.349-1.001l-3.555-1.725s-.006-5.093-.006-5.093c0-.414-.337-.749-.75-.749-.414 0-.75.337-.75.751z"
+                fill-rule="nonzero" />
+            </svg>
+            <span>History</span>
+          </a>
+        </li>
+      </ul>
+    </section>
+
+    <section class="py-2 px-6 border-b space-y-2 font-medium leading-4">
+      <span class="">Sign in for like, comments and subscribe.</span>
+      <button class="flex items-center px-2 py-0.5 text-sm text-blue-700 uppercase border border-blue-700 rounded-sm">
+        <svg class="mr-2" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+          <path
+            d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm7.753 18.305c-.261-.586-.789-.991-1.871-1.241-2.293-.529-4.428-.993-3.393-2.945 3.145-5.942.833-9.119-2.489-9.119-3.388 0-5.644 3.299-2.489 9.119 1.066 1.964-1.148 2.427-3.393 2.945-1.084.25-1.608.658-1.867 1.246-1.405-1.723-2.251-3.919-2.251-6.31 0-5.514 4.486-10 10-10s10 4.486 10 10c0 2.389-.845 4.583-2.247 6.305z" />
+        </svg>
+        Sign In
+      </button>
+    </section>
+
+    <section class="py-2 border-b">
+      <h1 class="ml-5 uppercase text-sm font-semibold">Best of youtube</h1>
+      <ul>
+        <li class="transition duration-500 hover:bg-gray-200">
+          <a href="#" class="flex items-center px-6 py-2">
+            <div class="mr-6 rounded-full p-1 bg-gray-700 w-[24px] h-[24px]">
+              <svg class="fill-white" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24">
+                <path
+                  d="M22 13c-.027-5.497-4.497-10-10-10s-9.973 4.503-10 10h2.5c.828 0 1.5.672 1.5 1.5v7c0 .828-.672 1.5-1.5 1.5h-3c-.828 0-1.5-.672-1.5-1.5v-8.5c.027-6.601 5.394-12 12-12s11.973 5.399 12 12v8.5c0 .828-.672 1.5-1.5 1.5h-3c-.828 0-1.5-.672-1.5-1.5v-7c0-.828.672-1.5 1.5-1.5h2.5z" />
+              </svg>
+            </div>
+            <span>Music</span>
+          </a>
+        </li>
+
+        <li class="transition duration-500 hover:bg-gray-200">
+
+          <a href="#" class="flex items-center px-6 py-2">
+            <div class="mr-6 rounded-full p-1 bg-gray-700 w-[24px] h-[24px]">
+              <svg class="mr-6 fill-white" xmlns="http://www.w3.org/2000/svg" width="17" height="17"
+                viewBox="0 0 24 24">
+                <path
+                  d="M16.965 10.694l-1.037-1.037-1.037 1.037 1.037 1.037-.707.707-1.037-1.037-1.037 1.037 1.037 1.036-.707.707-1.039-1.037-1.037 1.037 1.037 1.036-.707.707-1.037-1.036-1.037 1.037 1.037 1.036-.707.707-3.49-3.487.708-.707 1.037 1.037 1.038-1.037-1.038-1.036.708-.707 1.037 1.036 1.037-1.036-1.037-1.037.707-.707 1.037 1.037 1.037-1.037-1.037-1.036.707-.707 1.039 1.036 1.037-1.036-1.037-1.037.707-.707 3.488 3.487-.707.707zm-7.581-8.518c-1.49.832-2.893 1.878-4.113 3.098-1.264 1.263-2.292 2.665-3.1 4.113.449 5.071 6.695 11.411 12.366 12.666 1.516-.777 3.012-1.81 4.362-3.16 1.294-1.292 2.345-2.781 3.156-4.353-1.243-5.666-7.597-11.922-12.671-12.364m-8.542 10.198c-.553 1.632-.841 3.254-.841 4.749 0 2.218.618 4.096 1.779 5.258 1.045 1.043 2.866 1.619 5.129 1.619 1.375 0 3.02-.235 4.741-.769-4.71-1.994-9.142-6.433-10.808-10.857m11.548-11.537c1.588-.542 3.202-.837 4.747-.837 2.234 0 4.099.634 5.252 1.788 1.047 1.045 1.611 2.91 1.611 5.135 0 1.532-.258 3.146-.758 4.742-1.99-4.716-6.429-9.153-10.852-10.828" />
+                fill-rule="nonzero" />
+              </svg>
+            </div>
+            <span>Sports</span>
+          </a>
+        </li>
+
+        <li class="transition duration-500 hover:bg-gray-200">
+          <a href="#" class="flex items-center px-6 py-2">
+            <div class="mr-6 rounded-full p-1 bg-gray-700 w-[24px] h-[24px]">
+              <svg class="mr-6 fill-white" xmlns="http://www.w3.org/2000/svg" width="17" height="17"
+                viewBox="0 0 24 24">
+                <path
+                  d="M17.622 3c-1.913 0-2.558 1.382-5.623 1.382-3.009 0-3.746-1.382-5.623-1.382-5.209 0-6.376 10.375-6.376 14.348 0 2.145.817 3.652 2.469 3.652 3.458 0 2.926-5 6.915-5h5.23c3.989 0 3.457 5 6.915 5 1.652 0 2.471-1.506 2.471-3.651 0-3.973-1.169-14.349-6.378-14.349zm-10.622 10c-1.657 0-3-1.343-3-3s1.343-3 3-3 3 1.343 3 3-1.343 3-3 3zm10-6c.552 0 1 .447 1 1 0 .553-.448 1-1 1s-1-.447-1-1c0-.553.448-1 1-1zm-2 4c-.552 0-1-.447-1-1 0-.553.448-1 1-1s1 .447 1 1c0 .553-.448 1-1 1zm2 2c-.552 0-1-.447-1-1 0-.553.448-1 1-1s1 .447 1 1c0 .553-.448 1-1 1zm2-2c-.552 0-1-.447-1-1 0-.553.448-1 1-1s1 .447 1 1c0 .553-.448 1-1 1zm-10.25-1c0 .965-.785 1.75-1.75 1.75s-1.75-.785-1.75-1.75.785-1.75 1.75-1.75 1.75.785 1.75 1.75z" />
+              </svg>
+            </div>
+
+            <span>Gaming</span>
+          </a>
+        </li>
+
+        <li class="transition duration-500 hover:bg-gray-200">
+          <a href="#" class="flex items-center px-6 py-2">
+            <div class="mr-6 rounded-full p-1 bg-gray-700 w-[24px] h-[24px]">
+              <svg class="mr-6 fill-white" xmlns="http://www.w3.org/2000/svg" width="17" height="17"
+                viewBox="0 0 24 24">
+                <path
+                  d="M24 23h-24v-21h24v21zm-20-1v-4h-3v4h3zm15 0v-19h-14v19h14zm4 0v-4h-3v4h3zm-6-9.5l-9 5v-10l9 5zm3 .5v4h3v-4h-3zm-16 4v-4h-3v4h3zm5-1.2l5.941-3.3-5.941-3.3v6.6zm11-7.8v4h3v-4h-3zm-16 4v-4h-3v4h3zm16-9v4h3v-4h-3zm-16 4v-4h-3v4h3z" />
+              </svg>
+            </div>
+
+            <span>Movies</span>
+          </a>
+        </li>
+
+        <li class="transition duration-500 hover:bg-gray-200">
+          <a href="#" class="flex items-center px-6 py-2">
+            <div class="mr-6 rounded-full p-1 bg-gray-700 w-[24px] h-[24px]">
+              <svg class="mr-6 fill-white" xmlns="http://www.w3.org/2000/svg" width="17" height="17"
+                viewBox="0 0 24 24">
+                <path
+                  d="M7 10h-3v-1h3v1zm6 2h3v-1h-3v1zm3-5h-12v1h12v-1zm0 6h-12v1h12v-1zm0 2h-12v1h12v-1zm0-6h-3v1h3v-1zm-4 3v-3h-4v3h4zm-1.055-7.312l.238 1.284h.5l.501-1.941h-.482l-.249 1.32-.238-1.32h-.492l-.27 1.345-.24-1.345h-.505l.46 1.941h.506l.271-1.284zm-6.945 7.312h3v-1h-3v1zm18.44 4.277c.183-2.314-.433-2.54-3.288-5.322.171 1.223.528 3.397.911 5.001.089.382-.416.621-.586.215-.204-.495-.535-2.602-.82-4.72-.154-1.134-1.661-.995-1.657.177.005 1.822.003 3.341 0 6.041-.003 2.303 1.046 2.348 1.819 4.931.132.444.246.927.339 1.399l3.842-1.339c-1.339-2.621-.693-4.689-.56-6.383zm-6.428 1.723h-13.012v-16h14v7.894c.646-.342 1.348-.274 1.877.101l.123-.018v-8.477c0-.828-.672-1.5-1.5-1.5h-15c-.828 0-1.5.671-1.5 1.5v17c0 .829.672 1.5 1.5 1.5h13.974c-.245-.515-.425-1.124-.462-2zm-3.166-12.396c-.149 0-.324-.043-.466-.116l-.024-.013-.098.398.015.008c.102.058.318.119.547.119.581 0 .788-.328.788-.61 0-.272-.161-.458-.507-.586-.254-.096-.338-.145-.338-.247 0-.098.1-.161.254-.161.136 0 .266.03.388.088l.023.011.107-.39-.015-.007c-.145-.065-.311-.098-.495-.098-.442 0-.739.239-.739.593 0 .262.181.458.535.581.227.081.304.144.304.247 0 .117-.102.183-.279.183zm-5.325.368h.485v-1.941h-.438v1.189l-.64-1.189h-.536v1.941h.438v-1.327l.691 1.327zm2.028-1.545v-.396h-1.215v1.941h1.255v-.396h-.78v-.406h.698v-.393h-.698v-.35h.74z" />
+              </svg>
+            </div>
+
+            <span>News</span>
+          </a>
+        </li>
+
+        <li class="transition duration-500 hover:bg-gray-200">
+          <a href="#" class="flex items-center px-6 py-2">
+            <div class="mr-6 rounded-full p-1 bg-gray-700 w-[24px] h-[24px]">
+              <svg class="mr-6 fill-white" xmlns="http://www.w3.org/2000/svg" width="17" height="17"
+                viewBox="0 0 24 24">
+                <path
+                  d="M6.043 17.496l-1.483 1.505c-2.79-2.201-4.56-5.413-4.56-9.001s1.77-6.8 4.561-9l1.483 1.504c-2.327 1.835-3.805 4.512-3.805 7.496s1.478 5.661 3.804 7.496zm8.957-7.496c0-1.657-1.344-3-3-3s-3 1.343-3 3c0 1.304.838 2.403 2 2.816v10.184h2v-10.184c1.162-.413 2-1.512 2-2.816zm-8.282 0c0-1.791.887-3.398 2.282-4.498l-1.481-1.502c-1.86 1.467-3.04 3.608-3.04 6s1.18 4.533 3.04 6l1.481-1.502c-1.396-1.1-2.282-2.707-2.282-4.498zm12.722-9l-1.483 1.504c2.326 1.835 3.804 4.512 3.804 7.496s-1.478 5.661-3.804 7.496l1.483 1.505c2.79-2.201 4.56-5.413 4.56-9.001s-1.77-6.8-4.56-9zm-2.959 3l-1.481 1.502c1.396 1.101 2.282 2.707 2.282 4.498s-.886 3.398-2.282 4.498l1.481 1.502c1.86-1.467 3.04-3.608 3.04-6s-1.179-4.533-3.04-6z" />
+              </svg>
+            </div>
+
+            <span>Live</span>
+          </a>
+        </li>
+
+        <li class="transition duration-500 hover:bg-gray-200">
+          <a href="#" class="flex items-center px-6 py-2">
+            <div class="mr-6 rounded-full p-1 bg-gray-700 w-[24px] h-[24px]">
+              <svg class="mr-6 fill-white" xmlns="http://www.w3.org/2000/svg" width="17" height="17"
+                viewBox="0 0 24 24">
+                <path
+                  d="m2 19v-14c0-.552.447-1 1-1 .542 0 4.418 2.028 9 2.028 4.593 0 8.456-2.028 9-2.028.55 0 1 .447 1 1v14c0 .553-.45 1-1 1-.544 0-4.407-2.028-9-2.028-4.582 0-8.458 2.028-9 2.028-.553 0-1-.448-1-1zm1.5-.791 6.449-7.691c.289-.344.879-.338 1.16.012 0 0 1.954 2.434 1.954 2.434l1.704-1.283c.319-.24.816-.168 1.054.154l4.679 6.335v-12.44c-1.58.58-4.819 1.798-8.5 1.798-3.672 0-6.918-1.218-8.5-1.799zm2.657-.834c1.623-.471 3.657-.903 5.843-.903 2.309 0 4.444.479 6.105.98l-3.041-4.117-1.065.802.275.344c.259.323.206.796-.117 1.054-.323.259-.795.207-1.054-.117l-2.591-3.236zm.698-9.534c-1.051 0-1.905.854-1.905 1.905s.854 1.904 1.905 1.904 1.904-.853 1.904-1.904-.853-1.905-1.904-1.905zm0 1.3c.333 0 .604.271.604.605 0 .333-.271.604-.604.604-.334 0-.605-.271-.605-.604 0-.334.271-.605.605-.605z"
+                  fill-rule="nonzero" />
+              </svg>
+            </div>
+
+            <span>360&deg; Video</span>
+          </a>
+        </li>
+      </ul>
+    </section>
+
+    <section class="py-2 border-b">
+      <ul>
+        <li class="transition duration-500 hover:bg-gray-200">
+          <a href="#" class="flex items-center px-6 py-2">
+            <div class="mr-6 rounded-full p-1 bg-gray-700 w-[24px] h-[24px]">
+              <svg class="mr-6 fill-white" xmlns="http://www.w3.org/2000/svg" width="17" height="17"
+                viewBox="0 0 24 24">
+                <path
+                  d="m11 11h-7.25c-.414 0-.75.336-.75.75s.336.75.75.75h7.25v7.25c0 .414.336.75.75.75s.75-.336.75-.75v-7.25h7.25c.414 0 .75-.336.75-.75s-.336-.75-.75-.75h-7.25v-7.25c0-.414-.336-.75-.75-.75s-.75.336-.75.75z"
+                  fill-rule="nonzero" />
+              </svg>
+            </div>
+
+            <span>Browse channels</span>
+          </a>
+        </li>
+      </ul>
+    </section>
+
+    <section class="py-2 border-b">
+      <h1 class="ml-5 uppercase text-sm font-semibold">More from youtube</h1>
+      <ul>
+        <li class="transition duration-500 hover:bg-gray-200">
+          <a href="#" class="flex items-center px-6 py-2">
+            <div class="mr-6 rounded-full p-1 bg-gray-700 w-[24px] h-[24px]">
+              <svg class="mr-6 fill-white" xmlns="http://www.w3.org/2000/svg" width="17" height="17"
+                viewBox="0 0 24 24">
+                <path
+                  d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z" />
+              </svg>
+            </div>
+
+            <span>Youtube Premium</span>
+          </a>
+        </li>
+
+        <li class="transition duration-500 hover:bg-gray-200">
+          <a href="#" class="flex items-center px-6 py-2">
+            <div class="mr-6 rounded-full p-1 bg-gray-700 w-[24px] h-[24px]">
+              <svg class="mr-6 fill-white" xmlns="http://www.w3.org/2000/svg" width="17" height="17"
+                viewBox="0 0 24 24">
+                <path
+                  d="M6.043 17.496l-1.483 1.505c-2.79-2.201-4.56-5.413-4.56-9.001s1.77-6.8 4.561-9l1.483 1.504c-2.327 1.835-3.805 4.512-3.805 7.496s1.478 5.661 3.804 7.496zm8.957-7.496c0-1.657-1.344-3-3-3s-3 1.343-3 3c0 1.304.838 2.403 2 2.816v10.184h2v-10.184c1.162-.413 2-1.512 2-2.816zm-8.282 0c0-1.791.887-3.398 2.282-4.498l-1.481-1.502c-1.86 1.467-3.04 3.608-3.04 6s1.18 4.533 3.04 6l1.481-1.502c-1.396-1.1-2.282-2.707-2.282-4.498zm12.722-9l-1.483 1.504c2.326 1.835 3.804 4.512 3.804 7.496s-1.478 5.661-3.804 7.496l1.483 1.505c2.79-2.201 4.56-5.413 4.56-9.001s-1.77-6.8-4.56-9zm-2.959 3l-1.481 1.502c1.396 1.101 2.282 2.707 2.282 4.498s-.886 3.398-2.282 4.498l1.481 1.502c1.86-1.467 3.04-3.608 3.04-6s-1.179-4.533-3.04-6z" />
+              </svg>
+            </div>
+
+            <span>Live</span>
+          </a>
+        </li>
+      </ul>
+    </section>
+
+    <section class="py-2 border-b">
+      <ul>
+        <li class="transition duration-500 hover:bg-gray-200">
+          <a href="#" class="flex items-center px-6 py-2">
+            <div class="mr-6 rounded-full p-1 bg-gray-700 w-[24px] h-[24px]">
+              <svg class="mr-6 fill-white" xmlns="http://www.w3.org/2000/svg" width="17" height="17"
+                viewBox="0 0 24 24">
+                <path
+                  d="M24 13.616v-3.232c-1.651-.587-2.693-.752-3.219-2.019v-.001c-.527-1.271.1-2.134.847-3.707l-2.285-2.285c-1.561.742-2.433 1.375-3.707.847h-.001c-1.269-.526-1.435-1.576-2.019-3.219h-3.232c-.582 1.635-.749 2.692-2.019 3.219h-.001c-1.271.528-2.132-.098-3.707-.847l-2.285 2.285c.745 1.568 1.375 2.434.847 3.707-.527 1.271-1.584 1.438-3.219 2.02v3.232c1.632.58 2.692.749 3.219 2.019.53 1.282-.114 2.166-.847 3.707l2.285 2.286c1.562-.743 2.434-1.375 3.707-.847h.001c1.27.526 1.436 1.579 2.019 3.219h3.232c.582-1.636.749-2.69 2.027-3.222h.001c1.262-.524 2.12.101 3.698.851l2.285-2.286c-.743-1.563-1.375-2.433-.848-3.706.527-1.271 1.588-1.44 3.221-2.021zm-12 3.384c-2.762 0-5-2.239-5-5s2.238-5 5-5 5 2.239 5 5-2.238 5-5 5zm3-5c0 1.654-1.346 3-3 3s-3-1.346-3-3 1.346-3 3-3 3 1.346 3 3z" />
+              </svg>
+            </div>
+
+            <span>Settings</span>
+          </a>
+        </li>
+
+        <li class="transition duration-500 hover:bg-gray-200">
+          <a href="#" class="flex items-center px-6 py-2">
+            <div class="mr-6 rounded-full p-1 bg-gray-700 w-[24px] h-[24px]">
+              <svg class="mr-6 fill-white" xmlns="http://www.w3.org/2000/svg" width="17" height="17"
+                viewBox="0 0 24 24">
+                <path
+                  d="M4 24h-2v-24h2v24zm18-21.387s-1.621 1.43-3.754 1.43c-3.36 0-3.436-2.895-7.337-2.895-2.108 0-4.075.98-4.909 1.694v12.085c1.184-.819 2.979-1.681 4.923-1.681 3.684 0 4.201 2.754 7.484 2.754 2.122 0 3.593-1.359 3.593-1.359v-12.028z" />
+              </svg>
+            </div>
+
+            <span>Report history</span>
+          </a>
+        </li>
+
+        <li class="transition duration-500 hover:bg-gray-200">
+          <a href="#" class="flex items-center px-6 py-2">
+            <div class="mr-6 rounded-full p-1 bg-gray-700 w-[24px] h-[24px]">
+              <svg class="mr-6 fill-white" xmlns="http://www.w3.org/2000/svg" width="17" height="17"
+                viewBox="0 0 24 24">
+                <path
+                  d="M14.601 21.5c0 1.38-1.116 2.5-2.499 2.5-1.378 0-2.499-1.12-2.499-2.5s1.121-2.5 2.499-2.5c1.383 0 2.499 1.119 2.499 2.5zm-2.42-21.5c-4.029 0-7.06 2.693-7.06 8h3.955c0-2.304.906-4.189 3.024-4.189 1.247 0 2.57.828 2.684 2.411.123 1.666-.767 2.511-1.892 3.582-2.924 2.78-2.816 4.049-2.816 7.196h3.943c0-1.452-.157-2.508 1.838-4.659 1.331-1.436 2.986-3.222 3.021-5.943.047-3.963-2.751-6.398-6.697-6.398z" />
+              </svg>
+            </div>
+
+            <span>Help</span>
+          </a>
+        </li>
+
+        <li class="transition duration-500 hover:bg-gray-200">
+          <a href="#" class="flex items-center px-6 py-2">
+            <div class="mr-6 rounded-full p-1 bg-gray-700 w-[24px] h-[24px]">
+              <svg class="mr-6 fill-white" xmlns="http://www.w3.org/2000/svg" width="17" height="17"
+                viewBox="0 0 24 24">
+                <path
+                  d="M13,14h-2v-2h2V14z M13,5h-2v6h2V5z M19,3H5v16.59l3.29-3.29L8.59,16H9h10V3 M20,2v15H9l-5,5V2H20L20,2z"
+                  class="style-scope yt-icon"></path>
+              </svg>
+            </div>
+
+            <span>Send Feedback</span>
+          </a>
+        </li>
+      </ul>
+    </section>
+
+    <section class="p-5 space-y-4 text-sm font-bold">
+      <div>
+        <a class="hover:bg-gray-200 hover:text-gray-700 rounded-full p-1 transition duration-500" href="#">About</a>
+        <a class="hover:bg-gray-200 hover:text-gray-700 rounded-full p-1 transition duration-500" href="#">Press</a>
+        <a class="hover:bg-gray-200 hover:text-gray-700 rounded-full p-1 transition duration-500" href="#">Contact
+          us</a>
+        <a class="hover:bg-gray-200 hover:text-gray-700 rounded-full p-1 transition duration-500" href="#">Creators</a>
+        <a class="hover:bg-gray-200 hover:text-gray-700 rounded-full p-1 transition duration-500" href="#">Advertise</a>
+        <a class="hover:bg-gray-200 hover:text-gray-700 rounded-full p-1 transition duration-500" href="#">Copyright</a>
+        <a class="hover:bg-gray-200 hover:text-gray-700 rounded-full p-1 transition duration-500"
+          href="#">Developers</a>
+      </div>
+      <div>
+        <a class="hover:bg-gray-200 hover:text-gray-700 rounded-full p-1 transition duration-500" href="#">Terms</a>
+        <a class="hover:bg-gray-200 hover:text-gray-700 rounded-full p-1 transition duration-500" href="#">Privacy</a>
+        <a class="hover:bg-gray-200 hover:text-gray-700 rounded-full p-1 transition duration-500" href="#">Policy &
+          Safety</a>
+        <a class="hover:bg-gray-200 hover:text-gray-700 rounded-full p-1 transition duration-500" href="#">How youtube
+          works</a>
+        <a class="hover:bg-gray-200 hover:text-gray-700 rounded-full p-1 transition duration-500" href="#">Test new
+          features</a>
+      </div>
+      <div class="font-norml text-gray-400">
+        © 2022 Google LLC
+      </div>
+    </section>
+  </aside>
+
+  <section class="pt-14 relative">
+    <div
+      class="all-tags px-4 py-3 border-t border-b flex space-x-3 overflow-auto transition duration-1500 text-small whitespace-nowrap">
+
+      <div
+        class="arrow-right absolute right-2 bottom-2 rounded-full border border-gray-700 cursor-pointer bg-gray-600 p-2 transition duration-300 hover:scale-110 opacity-50 hover:opacity-90 active:scale-90">
+        <svg class="fill-white" width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd"
+          clip-rule="evenodd">
+          <path d="M4 .755l14.374 11.245-14.374 11.219.619.781 15.381-12-15.391-12-.609.755z" />
+        </svg>
+      </div>
+
+      <div
+        class="arrow-left absolute left-[250px] bottom-2 rounded-full border border-gray-700 cursor-pointer bg-gray-600 p-2 transition duration-300 hover:scale-110 opacity-50 hover:opacity-90 active:scale-90">
+        <svg class="fill-white" width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd"
+          clip-rule="evenodd">
+          <path d="M20 .755l-14.374 11.245 14.374 11.219-.619.781-15.381-12 15.391-12 .609.755z" />
+        </svg>
+      </div>
+
+      <a href="#"
+        class="tag px-3 py-1 bg-gray-500 border-gray-700 rounded-full hover:bg-gray-600 text-white  transition duration-500">All</a>
+      <a href="#"
+        class="tag px-3 py-1 bg-gray-300 border border-gray-400 rounded-full hover:bg-gray-600 text-white  transition duration-500">Trucks</a>
+      <a href="#"
+        class="tag px-3 py-1 bg-gray-300 border border-gray-400 rounded-full hover:bg-gray-600 text-white  transition duration-500">Tools</a>
+      <a href="#"
+        class="tag px-3 py-1 bg-gray-300 border border-gray-400 rounded-full hover:bg-gray-600 text-white  transition duration-500">Machines</a>
+      <a href="#"
+        class="tag px-3 py-1 bg-gray-300 border border-gray-400 rounded-full hover:bg-gray-600 text-white  transition duration-500">Engines</a>
+      <a href="#"
+        class="tag px-3 py-1 bg-gray-300 border border-gray-400 rounded-full hover:bg-gray-600 text-white  transition duration-500">Snow</a>
+      <a href="#"
+        class="tag px-3 py-1 bg-gray-300 border border-gray-400 rounded-full hover:bg-gray-600 text-white  transition duration-500">Ships</a>
+      <a href="#"
+        class="tag px-3 py-1 bg-gray-300 border border-gray-400 rounded-full hover:bg-gray-600 text-white  transition duration-500">Roads</a>
+      <a href="#"
+        class="tag px-3 py-1 bg-gray-300 border border-gray-400 rounded-full hover:bg-gray-600 text-white  transition duration-500">Tanks</a>
+      <a href="#"
+        class="tag px-3 py-1 bg-gray-300 border border-gray-400 rounded-full hover:bg-gray-600 text-white  transition duration-500">Woodworking</a>
+      <a href="#"
+        class="tag px-3 py-1 bg-gray-300 border border-gray-400 rounded-full hover:bg-gray-600 text-white  transition duration-500">Tractors</a>
+      <a href="#"
+        class="tag px-3 py-1 bg-gray-300 border border-gray-400 rounded-full hover:bg-gray-600 text-white  transition duration-500">Tanks</a>
+      <a href="#"
+        class="tag px-3 py-1 bg-gray-300 border border-gray-400 rounded-full hover:bg-gray-600 text-white  transition duration-500">Planes</a>
+      <a href="#"
+        class="tag px-3 py-1 bg-gray-300 border border-gray-400 rounded-full hover:bg-gray-600 text-white  transition duration-500">Football</a>
+      <a href="#"
+        class="tag px-3 py-1 bg-gray-300 border border-gray-400 rounded-full hover:bg-gray-600 text-white  transition duration-500">TV
+        Shows</a>
+      <a href="#"
+        class="tag px-3 py-1 bg-gray-300 border border-gray-400 rounded-full hover:bg-gray-600 text-white  transition duration-500">Music</a>
+      <a href="#"
+        class="tag px-3 py-1 bg-gray-300 border border-gray-400 rounded-full hover:bg-gray-600 text-white  transition duration-500">Shoping</a>
+    </div>
+  </section>
 </body>
 
 </html>

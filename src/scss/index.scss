@@ -4,9 +4,9 @@ html {
 }
 
 #phone::-webkit-inner-spin-button, //remove up and down arrow in input
-#phone::-webkit-outer-spin-button { 
-  -webkit-appearance: none; 
-  margin: 0; 
+#phone::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 
 body {
@@ -16,39 +16,20 @@ body {
   font-family: "Mulish", sans-serif;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  margin: 0;
-  padding: 0;
-}
-
-
-ul {
-  margin: 0;
-  padding: 0;
-}
-
-li {
-  margin: 0;
-  padding: 0;
-}
-
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
 ::-webkit-scrollbar {
   width: 0px;
   height: 0px;
 }
 
-.container {
-  width: 80%;
-  margin: 0 auto;
+aside::-webkit-scrollbar {
+  width: 5px; /* ширина всей полосы прокрутки */
+}
+
+aside::-webkit-scrollbar-track {
+  background: rgb(190, 190, 190); /* цвет зоны отслеживания */
+}
+
+aside::-webkit-scrollbar-thumb {
+  border-radius: 100px; /* округлось бегунка */
+  border: 2px solid rgb(78, 77, 76); /* отступ вокруг бегунка */
 }
